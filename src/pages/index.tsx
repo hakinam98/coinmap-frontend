@@ -11,7 +11,7 @@ import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 
 type UserType = {
-  id: number | string;
+  id: number;
   username?: string;
   email?: string;
   created_at?: Date;
@@ -20,7 +20,7 @@ type UserType = {
 
 export default function App() {
   const [currentUser, setCurrentUser] = useState<UserType>();
-  const [authToken, setAuthToken] = useState(undefined);
+  const [authToken, setAuthToken] = useState("");
   const [users, setUsers] = useState<Array<UserType>>([]);
   const router = useRouter();
   const columns = [
